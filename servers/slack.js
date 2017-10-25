@@ -57,13 +57,6 @@ module.exports = class Slack extends Server {
       await this.sendMessage(responseString, channel)
       delete this.originalParams[this.connection.messageCount]
     })
-
-    api.log(`ensuring the existence of the slack republishRoom: ${this.config.republishRoom}`)
-    try {
-      await api.chatRoom.add(this.config.republishRoom)
-    } catch (error) {
-      if (!error.toString().match(await api.config.errors.connectionRoomExists(this.config.republishRoom))) { throw error }
-    }
   }
 
   storeMessage (message) {
@@ -72,6 +65,7 @@ module.exports = class Slack extends Server {
   }
 
   async handleMessage (message) {
+    if (!message.text) { return }
     this.storeMessage(message)
     this.connection.params = message
 
@@ -83,7 +77,7 @@ module.exports = class Slack extends Server {
         this.connection.params.action = matches[1]
         this.originalParams[this.connection.messageCount] = this.connection.params
         matched = true
-        return this.processAction(this.connection)
+        this.processAction(this.connection)
       }
     })
   }
