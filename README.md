@@ -9,6 +9,8 @@ Does you action have a response?  It will be send back to slack.
 Don't want to respond in Slack?  Set `data.toRender = false` in your action's `run` method.
 
 ## Configuration
+In your [ActionHero](www.actionheroj.com) project: `npm install --save ah-slack-plugin`
+
 Make a new bot for your slack team: https://my.slack.com/apps -> manage -> custom integrations -> bots -> new
 Note the TOKEN
 
