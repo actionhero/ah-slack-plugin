@@ -1,4 +1,7 @@
 # ActionHero Slack Plugin
+
+[![CircleCI](https://circleci.com/gh/actionhero/ah-slack-plugin.svg?style=svg)](https://circleci.com/gh/actionhero/ah-slack-plugin)
+
 A Slack server for ActionHero v18+.
 It will listen to all messages in all the rooms it is a member of, and do stuff.
 
