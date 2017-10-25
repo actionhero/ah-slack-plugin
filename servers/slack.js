@@ -71,15 +71,8 @@ module.exports = class Slack extends Server {
     while (this.messages.length > this.config.messagesToSave) { this.shift() }
   }
 
-  async republishMessage (message) {
-    if (!this.config.republishRoom) { return }
-    if (api.config.redis.enabled === false) { return }
-    await api.chatRoom.broadcast(this.connection, this.config.republishRoom, message)
-  }
-
   async handleMessage (message) {
     this.storeMessage(message)
-    await this.republishMessage(message)
     this.connection.params = message
 
     const matches = message.text.match(this.config.messageActionRegexp)
@@ -87,7 +80,7 @@ module.exports = class Slack extends Server {
       this.connection.messageCount++
       this.connection.params.action = matches[1]
       this.originalParams[this.connection.messageCount] = this.connection.params
-      this.processAction(this.connection)
+      return this.processAction(this.connection)
     }
   }
 

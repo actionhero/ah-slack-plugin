@@ -1,7 +1,14 @@
 # ActionHero Slack Plugin
-A server for ActionHero v18+
+A Slack server for ActionHero v18+.
+It will listen to all messages in all the rooms it is a member of, and do stuff.
+
+Does you action have a response?  It will be send back to slack.
+Don't want to respond in Slack?  Set `data.toRender = false` in your action's `run` method.
 
 ## Configuration
+Make a new bot for your slack team: https://my.slack.com/apps -> manage -> custom integrations -> bots -> new
+Note the TOKEN
+
 ```js
 // config/plugins.js
 const path = require('path')
@@ -29,9 +36,7 @@ exports['default'] = {
         messageActionRegexp: /^action\s(\w*).*$/i,
         // how many messages should we store a history of receiving
         // messages can be accessed in `api.servers.servers.slack.messages`
-        messagesToSave: 100,
-        // should we republish all slack messages we receive to an actionhero chat room? (set to null to ignore)
-        republishRoom: `slack`
+        messagesToSave: 100
       }
     }
   }
