@@ -8,6 +8,8 @@ It will listen to all messages in all the rooms it is a member of, and do stuff.
 Does you action have a response?  It will be send back to slack.
 Don't want to respond in Slack?  Set `data.toRender = false` in your action's `run` method.
 
+To see a full ActionHero project example which uses this plugin, try here: https://github.com/actionhero/actionhero-slackbot-template
+
 ## Configuration
 In your [ActionHero](www.actionheroj.com) project: `npm install --save ah-slack-plugin`
 
