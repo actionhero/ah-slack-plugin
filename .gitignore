@@ -1,0 +1,23 @@
+# local actionhero files
+
+example/.env
+example/pids/*
+example/tmp/*
+example/log/*
+example/cache/*
+example/coverage/*
+example/node_modules/*
+
+# Node / NPM
+npm-debug.log
+
+# OS-specific wierdness
+.DS_Store
+
+# Redis
+dump.rdb
+cache.dump
+
+# Editor-specific
+/nbproject/*
+/.idea/*
