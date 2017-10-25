@@ -1,12 +1,6 @@
 # local actionhero files
 
-example/.env
-example/pids/*
-example/tmp/*
-example/log/*
-example/cache/*
-example/coverage/*
-example/node_modules/*
+node_modules/*
 
 # Node / NPM
 npm-debug.log

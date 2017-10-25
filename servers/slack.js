@@ -75,13 +75,17 @@ module.exports = class Slack extends Server {
     this.storeMessage(message)
     this.connection.params = message
 
-    const matches = message.text.match(this.config.messageActionRegexp)
-    if (matches) {
-      this.connection.messageCount++
-      this.connection.params.action = matches[1]
-      this.originalParams[this.connection.messageCount] = this.connection.params
-      return this.processAction(this.connection)
-    }
+    let matched = false
+    this.config.messageActionRegexp.forEach((regexp) => {
+      const matches = message.text.match(regexp)
+      if (matches && matched === false) {
+        this.connection.messageCount++
+        this.connection.params.action = matches[1]
+        this.originalParams[this.connection.messageCount] = this.connection.params
+        matched = true
+        return this.processAction(this.connection)
+      }
+    })
   }
 
   async start () {
