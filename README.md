@@ -1,5 +1,7 @@
 # ActionHero Slack Plugin
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/actionhero/ah-slack-plugin.svg)](https://greenkeeper.io/)
+
 [![CircleCI](https://circleci.com/gh/actionhero/ah-slack-plugin.svg?style=svg)](https://circleci.com/gh/actionhero/ah-slack-plugin)
 
 A Slack server for ActionHero v18+.
