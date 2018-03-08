@@ -21,6 +21,6 @@
     ]
   },
   "dependencies": {
-    "@slack/client": "^3.14.1"
+    "@slack/client": "^4.0.0"
   }
 }
