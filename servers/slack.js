@@ -1,5 +1,5 @@
-const {api, Server} = require('actionhero')
-const {RtmClient, CLIENT_EVENTS, RTM_EVENTS} = require('@slack/client')
+const { api, Server } = require('actionhero')
+const { RtmClient, CLIENT_EVENTS, RTM_EVENTS } = require('@slack/client')
 
 module.exports = class Slack extends Server {
   constructor () {
