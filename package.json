@@ -13,7 +13,7 @@
     "test": "standard"
   },
   "devDependencies": {
-    "standard": "^13.0.1"
+    "standard": "^14.0.1"
   },
   "standard": {
     "ignore": [
