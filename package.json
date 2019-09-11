@@ -7,13 +7,13 @@
     "node": ">=8.0.0"
   },
   "peerDependencies": {
-    "actionhero": "^18.0.2"
+    "actionhero": "^19.2.2"
   },
   "scripts": {
     "test": "standard"
   },
   "devDependencies": {
-    "standard": "^13.0.1"
+    "standard": "^14.2.0"
   },
   "standard": {
     "ignore": [
@@ -21,6 +21,6 @@
     ]
   },
   "dependencies": {
-    "@slack/client": "^3.16.0"
+    "@slack/client": "^5.0.2"
   }
 }
